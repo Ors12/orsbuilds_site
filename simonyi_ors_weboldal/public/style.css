@@ -806,3 +806,53 @@ html { scroll-padding-top: 84px; }
 .cs-link:focus-visible { outline: 3px solid #f2b84b; outline-offset: 3px; }
 .showcase-sub { font-size: 1.1rem; margin: 0 0 8px; color: var(--muted); font-weight: 600; }
 @media (max-width: 800px) { .client-soon-home .cs-build { justify-self: stretch; max-width: none; } }
+
+/* ---------- Sötét mód ---------- */
+.theme-toggle { position: absolute; top: 50%; right: calc(clamp(14px, 2.4vw, 40px) + 104px); transform: translateY(-50%); z-index: 60; display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid rgba(230,238,233,.32); border-radius: 50%; background: rgba(255,255,255,.06); color: var(--mark); cursor: pointer; transition: background .2s, border-color .2s; }
+.theme-toggle:hover { background: rgba(255,255,255,.14); border-color: var(--mark); }
+.theme-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.theme-toggle svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .ti-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .ti-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .ti-moon { display: none; }
+@media (max-width: 1400px) { .topbar .nav { padding-right: 190px; } }
+@media (max-width: 820px) {
+  .topbar .nav { padding-right: 0; }
+  .theme-toggle { position: relative; top: auto; right: auto; transform: none; order: 2; margin-left: 12px; }
+  .theme-toggle + .lang-switch { margin-left: 8px; }
+}
+
+html[data-theme="dark"] { color-scheme: dark;
+  --ground: #0e1714; --panel: #15221e; --ink: #e4ece7; --muted: #9db0a8; --rule: #2a3b36;
+  --brand: #46d3b4; --brand-dark: #7de6cd; --band: #0b1512; --band-ink: #dfe9e4; }
+html[data-theme="dark"] body::before { background: #0e1714; }
+html[data-theme="dark"] .topbar, html[data-theme="dark"] footer { background-image: linear-gradient(rgba(8,18,15,.92), rgba(8,18,15,.92)), url("assets/bg/hatter-sav.svg"); }
+/* gombok és kitöltött elemek: sötét tengerzöld alap, fehér szöveg */
+html[data-theme="dark"] .btn, html[data-theme="dark"] .career-btn, html[data-theme="dark"] .about-short-link,
+html[data-theme="dark"] .chip input:checked + span, html[data-theme="dark"] .carousel-btn:hover:not(:disabled),
+html[data-theme="dark"] .carousel-btn:focus-visible, html[data-theme="dark"] .tools-layout .skill-card:nth-child(1) { background: #0b6b5e !important; border-color: #0b6b5e; color: #fff; }
+html[data-theme="dark"] .btn:hover, html[data-theme="dark"] .career-btn:hover { background: #0e8574 !important; border-color: #0e8574; }
+html[data-theme="dark"] .btn.secondary, html[data-theme="dark"] .career-btn.secondary { background: transparent !important; color: var(--brand); border-color: var(--brand); }
+html[data-theme="dark"] .btn.secondary:hover { background: rgba(70,211,180,.12) !important; color: var(--brand-dark); }
+/* felületek, amelyek fix világos színt használtak */
+html[data-theme="dark"] input, html[data-theme="dark"] select, html[data-theme="dark"] textarea { background-color: #101b18; color: var(--ink); border-color: #34463f; }
+html[data-theme="dark"] input:disabled, html[data-theme="dark"] select:disabled { background: #1a2924; }
+html[data-theme="dark"] .contact-form select { background-color: #101b18; }
+html[data-theme="dark"] .chip span { background: #15221e; border-color: #3a4d46; color: var(--ink); }
+html[data-theme="dark"] .nav-dropdown-menu a:hover, html[data-theme="dark"] .nav-dropdown-menu a.active { background: #20322d; }
+html[data-theme="dark"] .lang-menu { background: #15221e; box-shadow: 0 18px 40px -14px rgba(0,0,0,.8); }
+html[data-theme="dark"] .lang-menu button:hover { background: #20322d; }
+html[data-theme="dark"] .lang-menu button[aria-pressed="true"] { background: #2d3a22; }
+html[data-theme="dark"] .lang-code { background: #0b6b5e; }
+html[data-theme="dark"] mark.fill { background: #5a4a14; color: #fff3c9; }
+html[data-theme="dark"] .versus-old { background: #1d2a26; color: #8fa199; }
+html[data-theme="dark"] .work-shot { background: #0b1512; }
+html[data-theme="dark"] .tools-layout .skill-card:nth-child(2), html[data-theme="dark"] .tools-layout .skill-card:nth-child(2) * { color: #18231f; }
+html[data-theme="dark"] .hero-pitch .pitch-cta:hover, html[data-theme="dark"] .profile-link:hover, html[data-theme="dark"] .faq-ask-link:hover,
+html[data-theme="dark"] .why-cta .why-cta-btn:hover, html[data-theme="dark"] .cookie-bar .btn:hover { background: #e4ece7; color: #0b1512; }
+html[data-theme="dark"] .service, html[data-theme="dark"] .study, html[data-theme="dark"] .faq-item, html[data-theme="dark"] .skill-card { background-color: var(--panel); }
+html[data-theme="dark"] img.logo, html[data-theme="dark"] .brand img { filter: none; }
+html[data-theme="dark"] main { --muted: #b3c3bb; }
+html[data-theme="dark"] body * { text-shadow: none !important; }
+html[data-theme="dark"] ::placeholder { color: #7f918a; }
+html[data-theme="dark"] .booking-form option:disabled { color: #6c7d76; }
