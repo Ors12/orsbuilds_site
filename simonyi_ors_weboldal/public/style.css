@@ -856,3 +856,7 @@ html[data-theme="dark"] main { --muted: #b3c3bb; }
 html[data-theme="dark"] body * { text-shadow: none !important; }
 html[data-theme="dark"] ::placeholder { color: #7f918a; }
 html[data-theme="dark"] .booking-form option:disabled { color: #6c7d76; }
+.lang-flag { display: inline-grid; flex: none; width: 26px; height: 17px; border-radius: 3px; overflow: hidden; box-shadow: 0 0 0 1px rgba(0,0,0,.22); }
+.lang-flag svg { width: 100%; height: 100%; display: block; }
+.lang-toggle .lang-flag { width: 24px; height: 16px; }
+.lang-menu button .lang-flag { width: 28px; height: 19px; }

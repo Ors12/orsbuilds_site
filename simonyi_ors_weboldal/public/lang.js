@@ -126,10 +126,16 @@
     applyMeta();
     notice();
     document.querySelectorAll('.lang-menu button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === next)));
-    const cur = document.querySelector('.lang-current');
-    if (cur) cur.textContent = next.toUpperCase();
+    const cur = document.querySelector('.lang-current-flag');
+    if (cur) cur.innerHTML = FLAGS[next];
     if (persist) write(next);
   }
+
+  const FLAGS = {
+    hu: '<svg viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="5.34" fill="#cd2a3e"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><rect y="10.66" width="24" height="5.34" fill="#436f4d"/></svg>',
+    en: '<svg viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0l24 16M24 0L0 16" stroke="#c8102e" stroke-width="1.3"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5.2"/><path d="M12 0v16M0 8h24" stroke="#c8102e" stroke-width="3"/></svg>',
+    de: '<svg viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="5.34" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.66" width="24" height="5.34" fill="#ffce00"/></svg>'
+  };
 
   function buildSwitch() {
     const nav = document.querySelector('.topbar .nav');
@@ -137,9 +143,9 @@
     const box = document.createElement('div');
     box.className = 'lang-switch';
     box.setAttribute('translate', 'no');
-    box.innerHTML = '<button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Nyelv / Language / Sprache">'
-      + '<svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 4 5.7 4 9s-1.4 6.3-4 9c-2.6-2.7-4-5.7-4-9s1.4-6.3 4-9z"/></svg>'
-      + '<span class="lang-current">HU</span><span class="lang-caret" aria-hidden="true">⌄</span></button>'
+    box.innerHTML = '<button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Nyelv / Language / Sprache" title="Nyelv / Language / Sprache">'
+      + '<span class="lang-flag lang-current-flag">' + FLAGS[lang] + '</span>'
+      + '<span class="lang-caret" aria-hidden="true">⌄</span></button>'
       + '<ul class="lang-menu" hidden></ul>';
     const toggle = box.querySelector('.lang-toggle');
     const menu = box.querySelector('.lang-menu');
@@ -151,7 +157,7 @@
       b.dataset.lang = l.code;
       b.lang = l.code;
       b.setAttribute('aria-pressed', 'false');
-      b.innerHTML = `<span class="lang-code">${l.label}</span><span>${l.name}</span>`;
+      b.innerHTML = `<span class="lang-flag">${FLAGS[l.code]}</span><span>${l.name}</span>`;
       b.addEventListener('click', () => { setLang(l.code, true); close(); toggle.focus(); });
       li.appendChild(b);
       menu.appendChild(li);
