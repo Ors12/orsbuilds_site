@@ -860,3 +860,20 @@ html[data-theme="dark"] .booking-form option:disabled { color: #6c7d76; }
 .lang-flag svg { width: 100%; height: 100%; display: block; }
 .lang-toggle .lang-flag { width: 24px; height: 16px; }
 .lang-menu button .lang-flag { width: 28px; height: 19px; }
+
+/* Számok és "Ismerős a gond?" a Kezdőlapon */
+.facts { background: var(--band); color: var(--band-ink); margin: 8px 0 0; }
+.facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 3vw, 40px); padding-block: clamp(26px, 4vw, 42px); }
+.facts-grid div { display: grid; gap: 6px; align-content: start; padding-left: 16px; border-left: 3px solid var(--mark); }
+.facts-grid strong { font: 700 clamp(1.45rem, 2.6vw, 2rem)/1.1 var(--serif, inherit); color: #fff; }
+.facts-grid span { font-size: .95rem; color: rgba(230,238,233,.82); line-height: 1.4; }
+.facts, .facts * { text-shadow: none !important; }
+.pain { padding-block: clamp(36px, 6vw, 72px); }
+.pain-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.pain h2 { margin: 0 0 14px; }
+.pain ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.pain li { position: relative; padding-left: 28px; }
+.pain li::before { content: ""; position: absolute; left: 0; top: .72em; width: 16px; height: 2px; background: #b04a3c; transform: rotate(-12deg); }
+.pain-answer { padding: clamp(22px, 3vw, 34px); border-left: 4px solid var(--mark); background: var(--panel); border-radius: 4px 14px 14px 4px; display: grid; gap: 18px; justify-items: start; }
+.pain-answer p { margin: 0; font-size: 1.18rem; font-weight: 600; }
+@media (max-width: 800px) { .facts-grid { grid-template-columns: 1fr 1fr; } .pain-grid { grid-template-columns: 1fr; } }
