@@ -241,3 +241,33 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
     start();
   });
 })();
+
+/* Projekt-bemutató: fülek és automatikus lapozás a böngészőkeretben */
+(function () {
+  var root = document.querySelector('[data-pshow]');
+  if (!root) return;
+  var slides = root.querySelectorAll('.pshow-slide');
+  var tabs = root.querySelectorAll('.pshow-tab');
+  var caps = root.querySelectorAll('.pshow-cap');
+  var url = root.querySelector('.pshow-url b');
+  var cur = 0, shot = 0, timer = null, held = false;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function paintShot() {
+    var imgs = slides[cur].querySelectorAll('img');
+    imgs.forEach(function (im, j) { im.classList.toggle('on', j === shot); });
+  }
+  function show(k) {
+    cur = k; shot = 0;
+    slides.forEach(function (s, j) { s.classList.add('js-ready'); s.classList.toggle('on', j === k); });
+    tabs.forEach(function (t, j) { t.classList.toggle('on', j === k); t.setAttribute('aria-selected', String(j === k)); });
+    caps.forEach(function (c, j) { c.classList.toggle('on', j === k); });
+    url.textContent = 'orsbuilds.hu/projects/' + slides[k].dataset.slug;
+    paintShot();
+  }
+  function tick() { if (held) return; var n = slides[cur].querySelectorAll('img').length; shot = (shot + 1) % n; paintShot(); }
+  function start() { if (!timer && !reduce) timer = setInterval(tick, 2600); }
+  tabs.forEach(function (t, j) { t.addEventListener('click', function () { show(j); }); });
+  root.querySelector('.pshow-stage').addEventListener('mouseenter', function () { held = true; });
+  root.querySelector('.pshow-stage').addEventListener('mouseleave', function () { held = false; });
+  show(0); start();
+})();
