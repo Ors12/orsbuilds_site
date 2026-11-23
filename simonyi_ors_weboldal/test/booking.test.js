@@ -28,7 +28,7 @@ test('rácspontok: 45 perc két cellát foglal', () => {
 });
 
 test('mai napon csak a jövőbeli időpontok, zárásig', () => {
-  const times = availableTimes('2026-11-18', 'Bemutatkozó weboldal', new Set(), now);
+  const times = availableTimes('2026-11-18', 'Weboldal', new Set(), now);
   assert.equal(times[0], '10:30');
   assert.equal(times.at(-1), '16:30');
 });
@@ -47,10 +47,10 @@ test('jövőbeli nap: foglalt cellák kizárják az átfedő kezdéseket', () =>
 
 test('foglalt időpont szerepel a listában, de nem szabad', () => {
   const taken = new Set(['10:00']);
-  const states = slotStates('2026-11-19', 'Bemutatkozó weboldal', taken, now);
+  const states = slotStates('2026-11-19', 'Weboldal', taken, now);
   assert.equal(states.find((s) => s.time === '10:00').free, false);
   assert.equal(states.find((s) => s.time === '10:30').free, true);
-  assert.equal(availableTimes('2026-11-19', 'Bemutatkozó weboldal', taken, now).includes('10:00'), false);
+  assert.equal(availableTimes('2026-11-19', 'Weboldal', taken, now).includes('10:00'), false);
 });
 
 test('lemondhatóság: csak a jövőbeli kezdés', () => {
@@ -61,7 +61,7 @@ test('lemondhatóság: csak a jövőbeli kezdés', () => {
 });
 
 test('bármely lefoglalt kezdés, bármely szolgáltatással, mindenki más számára foglalt lesz', () => {
-  const services = ['Bemutatkozó weboldal', 'Többoldalas céges weboldal', 'Webshop', 'Egyedi fejlesztés', 'Karbantartás és szerkesztés', 'Egyéb'];
+  const services = ['Weboldal', 'Webshop', 'Karbantartás és szerkesztés', 'Egyéb'];
   for (const bookedService of services) {
     for (const time of availableTimes('2026-11-19', bookedService, new Set(), now)) {
       const taken = new Set(cellsFor(time, bookingDuration(bookedService)));

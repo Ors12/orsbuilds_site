@@ -951,7 +951,7 @@ html[data-theme="dark"] .strip-shot { box-shadow: 0 18px 34px -20px rgba(0,0,0,.
 
 /* Árak: három csomag + két kiegészítő sor */
 .pricing { display: grid; gap: clamp(18px, 2.4vw, 28px); }
-.pricing .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); align-items: stretch; }
+.pricing .tiers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); align-items: stretch; }
 .pricing .service.tier { position: relative; gap: 20px; padding: clamp(26px, 3vw, 38px); border-radius: 18px; }
 .pricing .tier h2 { font-size: 1.55rem; margin: 0 0 8px; }
 .pricing .tier .service-buy { order: 3; display: grid; gap: 14px; justify-content: stretch; border-top: 0; padding-top: 0; margin-top: auto; }
@@ -967,7 +967,7 @@ html[data-theme="dark"] .strip-shot { box-shadow: 0 18px 34px -20px rgba(0,0,0,.
 .pricing .tier-main .price-button { background: var(--mark); border-color: var(--mark); color: #14201c; }
 .pricing .tier-main .price-button:hover { background: #fff; border-color: #fff; }
 .tier-tag { position: absolute; top: -13px; left: clamp(26px, 3vw, 38px); padding: 5px 14px; border-radius: 999px; background: var(--mark); color: #14201c; font: 700 .85rem var(--sans); }
-.pricing .addons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.pricing .addons { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 28px); }
 .pricing .service.addon { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 24px; padding: 22px 26px; border-radius: 14px; }
 .pricing .addon h2 { font-size: 1.25rem; margin: 0 0 4px; }
 .pricing .addon .service-list { display: none; }

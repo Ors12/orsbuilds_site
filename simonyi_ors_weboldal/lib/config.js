@@ -11,10 +11,8 @@ export const config = {
     stepMinutes: 30,
     maxDaysAhead: 90,
     services: {
-      'Bemutatkozó weboldal': 30,
-      'Többoldalas céges weboldal': 45,
+      'Weboldal': 30,
       'Webshop': 60,
-      'Egyedi fejlesztés': 45,
       'Karbantartás és szerkesztés': 30,
       'Egyéb': 30,
     },
@@ -24,7 +22,6 @@ export const config = {
     'Webshop készítése',
     'Meglévő weboldal továbbfejlesztése',
     'Hiba javítása vagy karbantartás',
-    'Egyedi fejlesztés',
     'Egyéb kérdés / együttműködés',
   ],
 };
