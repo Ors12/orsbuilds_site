@@ -220,6 +220,7 @@ window.ORS_I18N = {
 "Edzői bemutatkozás, edzéscsomagok és online időpontfoglalás egy helyen. Az oldal fejlesztés alatt áll, hamarosan megnyílik.": "Trainer profile, training packages and online booking in one place. The site is under development and will open soon.",
 "Hamarosan elérhető": "Available soon",
 "Ügyfélprojektek": "Client projects",
+"Ajánlott": "Recommended",
 "Ilyen oldalakat építek": "This is the kind of site I build",
 "Mintaoldalak, amelyek megmutatják, hogyan dolgozom. Kattints, és nézd meg élőben.": "Sample sites that show how I work. Click to see them live.",
 "Klímaszerelés · weboldal": "Air conditioning · website",

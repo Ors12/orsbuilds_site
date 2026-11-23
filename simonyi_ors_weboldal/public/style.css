@@ -948,3 +948,33 @@ html[data-theme="dark"] .pshow-stage { background: radial-gradient(90% 120% at 8
 @keyframes strip-roll { to { transform: translateX(calc(-50% - clamp(8px, 1.2vw, 14px))); } }
 @media (prefers-reduced-motion: reduce) { .strip { overflow-x: auto; -webkit-mask-image: none; mask-image: none; } .strip-track { animation: none; } .strip-track [aria-hidden="true"] { display: none; } }
 html[data-theme="dark"] .strip-shot { box-shadow: 0 18px 34px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.1); }
+
+/* Árak: három csomag + két kiegészítő sor */
+.pricing { display: grid; gap: clamp(18px, 2.4vw, 28px); }
+.pricing .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); align-items: stretch; }
+.pricing .service.tier { position: relative; gap: 20px; padding: clamp(26px, 3vw, 38px); border-radius: 18px; }
+.pricing .tier h2 { font-size: 1.55rem; margin: 0 0 8px; }
+.pricing .tier .service-buy { order: 3; display: grid; gap: 14px; justify-content: stretch; border-top: 0; padding-top: 0; margin-top: auto; }
+.pricing .tier .service-price { order: -1; background: none; color: var(--ink) !important; padding: 0; border-radius: 0; font: 700 clamp(1.9rem, 3vw, 2.4rem)/1.1 var(--serif); }
+.pricing .tier .service-list { display: grid; gap: 11px; flex: 0 0 auto; }
+.pricing .tier .service-list li { position: relative; padding: 0 0 0 30px; background: none; border: 0; border-radius: 0; font-size: 1rem; }
+.pricing .tier .service-list li::before { content: ""; position: absolute; left: 0; top: .22em; width: 18px; height: 18px; border-radius: 50%; background: var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 11px no-repeat; }
+.pricing .tier .price-button { width: 100%; justify-content: center; text-align: center; }
+.pricing .tier-main { background: var(--band); color: var(--band-ink); border-color: var(--band); box-shadow: 0 30px 50px -28px rgba(10,28,24,.7); }
+.pricing .tier-main :is(h2, .service-price, li) { color: #fff !important; }
+.pricing .tier-main p { color: rgba(230,238,233,.82); }
+.pricing .tier-main .service-list li::before { background-color: var(--mark); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314201c' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E"); }
+.pricing .tier-main .price-button { background: var(--mark); border-color: var(--mark); color: #14201c; }
+.pricing .tier-main .price-button:hover { background: #fff; border-color: #fff; }
+.tier-tag { position: absolute; top: -13px; left: clamp(26px, 3vw, 38px); padding: 5px 14px; border-radius: 999px; background: var(--mark); color: #14201c; font: 700 .85rem var(--sans); }
+.pricing .addons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.pricing .service.addon { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 24px; padding: 22px 26px; border-radius: 14px; }
+.pricing .addon h2 { font-size: 1.25rem; margin: 0 0 4px; }
+.pricing .addon .service-list { display: none; }
+.pricing .addon .service-buy { display: grid; justify-items: end; gap: 10px; border-top: 0; padding-top: 0; }
+.pricing .addon .service-price { padding: 5px 14px; font-size: 1rem; }
+@media (max-width: 960px) { .pricing .tiers { grid-template-columns: 1fr; } .pricing .addons { grid-template-columns: 1fr; } .tier-tag { top: -12px; } }
+@media (max-width: 520px) { .pricing .service.addon { grid-template-columns: 1fr; } .pricing .addon .service-buy { justify-items: start; } }
+html[data-theme="dark"] .pricing .tier-main { background: #0b1512; border-color: #2d4a42; }
+html[data-theme="dark"] .pricing .tier:not(.tier-main) .service-price { color: var(--ink) !important; }
+html[data-theme="dark"] .pricing .tier-main :is(h2, .service-price, li) { color: #fff !important; }
