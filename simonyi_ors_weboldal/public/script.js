@@ -281,3 +281,16 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
   stage.addEventListener('touchstart', function () { held = true; setTimeout(function () { held = false; }, 6000); }, { passive: true });
   show(0); start();
 })();
+
+/* Gördülő sáv: a kártyák megkettőzése a végtelen futáshoz */
+(function () {
+  var strip = document.querySelector('[data-strip]');
+  if (!strip) return;
+  var track = strip.querySelector('.strip-track');
+  Array.prototype.slice.call(track.children).forEach(function (li) {
+    var c = li.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    c.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+    track.appendChild(c);
+  });
+})();
