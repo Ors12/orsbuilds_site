@@ -1018,3 +1018,17 @@ html[data-theme="dark"] .why-ico { background: #0b1512; color: var(--mark); box-
 html[data-theme="dark"] .benefit-main { background: linear-gradient(135deg, #e0a526, #f0c869); }
 html[data-theme="dark"] .benefit-main .why-ico { background: #fff; color: #14201c; }
 .benefit, .benefit *, .basic-grid li, .basic-grid li * { text-shadow: none !important; }
+
+/* Forgatható alapjellemző-kártyák */
+.basic-grid li.flip-li, .basic-grid li { padding: 0; background: none; border: 0; display: block; }
+.flip { display: block; width: 100%; height: 100%; min-height: 172px; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; perspective: 900px; text-align: center; }
+.flip-inner { position: relative; display: block; width: 100%; height: 100%; min-height: 172px; transition: transform .6s cubic-bezier(.3,.7,.2,1); transform-style: preserve-3d; }
+.flip-face { position: absolute; inset: 0; display: grid; align-content: center; justify-items: center; gap: 12px; padding: 18px 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--rule); backface-visibility: hidden; -webkit-backface-visibility: hidden; font-weight: 600; }
+.flip-back { transform: rotateY(180deg); background: var(--band); border-color: var(--band); color: #fff; font-weight: 500; font-size: .95rem; line-height: 1.45; }
+.flip-back, .flip-back * { text-shadow: none !important; }
+.flip:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 16px; }
+.flip.flipped .flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) { .flip:hover .flip-inner { transform: rotateY(180deg); } }
+@media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
+@media (max-width: 600px) { .flip, .flip-inner { min-height: 205px; } .flip-back { font-size: .88rem; padding: 14px 12px; } }
+html[data-theme="dark"] .flip-back { background: #0b1512; border-color: #2d4a42; }

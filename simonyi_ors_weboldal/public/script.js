@@ -294,3 +294,11 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
     track.appendChild(c);
   });
 })();
+
+/* Forgatható kártyák: kattintásra / érintésre / Enterre is fordulnak */
+document.querySelectorAll('.flip').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var on = b.classList.toggle('flipped');
+    b.setAttribute('aria-pressed', String(on));
+  });
+});
