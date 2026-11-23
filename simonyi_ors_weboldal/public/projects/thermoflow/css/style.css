@@ -10,3 +10,6 @@ padding: 140px 0;
 .ref-img:hover { transform: translateY(-8px) scale(1.03); transition:0.3s;}
 .fc { background:white; padding:10px; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.1);}
 .booking-card { background:white; }
+
+/* Kis képernyőn ne lógjon ki az oszlopok negatív margója */
+@media (max-width: 575px) { .row.g-5 { --bs-gutter-x: 1.5rem; } }

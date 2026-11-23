@@ -911,3 +911,22 @@ html[data-theme="dark"] .booking-form option:disabled { color: #6c7d76; }
 @media (prefers-reduced-motion: reduce) { .pshow-frame, .pshow-slide, .pshow-slide img { transition: none; } .pshow-frame { transform: none; } }
 html[data-theme="dark"] .pshow-tab.on { color: #14201c; }
 html[data-theme="dark"] .pshow-stage { background: radial-gradient(90% 120% at 80% 0%, #1b3730 0%, rgba(27,55,48,0) 60%), #0b1512; }
+
+/* Telefonos nézet a böngészőkeret mellett */
+.pshow-stage { position: relative; }
+.pshow-phone { position: absolute; right: clamp(14px, 6vw, 90px); bottom: clamp(20px, 4vw, 48px); width: clamp(120px, 17vw, 168px); aspect-ratio: 390 / 844; border-radius: 26px; padding: 7px; background: #0b1512; box-shadow: 0 30px 50px -18px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.18); transform: rotate(3deg); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.pshow-stage:hover .pshow-phone { transform: rotate(0) translateY(-6px); }
+.pshow-notch { position: absolute; z-index: 2; top: 11px; left: 50%; width: 30%; height: 6px; border-radius: 4px; background: #000; transform: translateX(-50%); }
+.pshow-phone-screen { position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; background: #fff; }
+.pshow-phone .pp { position: absolute; inset: 0; opacity: 0; transition: opacity .5s; }
+.pshow-phone .pp.on { opacity: 1; }
+.pshow-phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .6s; }
+.pshow-phone img.on { opacity: 1; }
+.pshow-phone .pp:not(.js-ready) img:first-child { opacity: 1; }
+@media (max-width: 640px) {
+  .pshow-stage { display: grid; place-items: center; padding-block: 34px; }
+  .pshow-frame { display: none; }
+  .pshow-phone { position: relative; right: auto; bottom: auto; width: min(62vw, 230px); transform: none; }
+  .pshow-stage:hover .pshow-phone { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .pshow-phone, .pshow-phone .pp, .pshow-phone img { transition: none; } .pshow-phone, .pshow-stage:hover .pshow-phone { transform: none; } }

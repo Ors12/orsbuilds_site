@@ -525,3 +525,13 @@ section {
   color: #fff;
 }
 
+
+/* Mobil menü: a menüpontok a logó alatt, több sorban jelennek meg */
+@media (max-width: 991px) {
+  #header .container { flex-wrap: wrap; justify-content: center; }
+  #header .logo { width: 100%; text-align: center; font-size: 22px; margin: 0 0 8px; }
+  #header .navbar { position: static; left: auto; width: 100%; }
+  #header .navbar ul { flex-wrap: wrap; justify-content: center; gap: 2px 4px; }
+  #header .navbar a, #header .navbar a:focus { padding: 6px 9px; font-size: 14px; }
+  #home .container { padding-top: 150px; }
+}

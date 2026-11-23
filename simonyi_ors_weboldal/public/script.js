@@ -242,32 +242,42 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
   });
 })();
 
-/* Projekt-bemutató: fülek és automatikus lapozás a böngészőkeretben */
+/* Projekt-bemutató: fülek, telefonos nézet és automatikus váltás */
 (function () {
   var root = document.querySelector('[data-pshow]');
   if (!root) return;
   var slides = root.querySelectorAll('.pshow-slide');
+  var phones = root.querySelectorAll('.pshow-phone .pp');
   var tabs = root.querySelectorAll('.pshow-tab');
   var caps = root.querySelectorAll('.pshow-cap');
   var url = root.querySelector('.pshow-url b');
-  var cur = 0, shot = 0, timer = null, held = false;
+  var cur = 0, shot = 0, ticks = 0, timer = null, held = false, manual = false;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function paintShot() {
-    var imgs = slides[cur].querySelectorAll('img');
-    imgs.forEach(function (im, j) { im.classList.toggle('on', j === shot); });
+    slides[cur].querySelectorAll('img').forEach(function (im, j) { im.classList.toggle('on', j === shot); });
+    var pi = phones[cur].querySelectorAll('img');
+    pi.forEach(function (im, j) { im.classList.toggle('on', j === shot % pi.length); });
   }
   function show(k) {
-    cur = k; shot = 0;
+    cur = k; shot = 0; ticks = 0;
     slides.forEach(function (s, j) { s.classList.add('js-ready'); s.classList.toggle('on', j === k); });
+    phones.forEach(function (s, j) { s.classList.add('js-ready'); s.classList.toggle('on', j === k); });
     tabs.forEach(function (t, j) { t.classList.toggle('on', j === k); t.setAttribute('aria-selected', String(j === k)); });
     caps.forEach(function (c, j) { c.classList.toggle('on', j === k); });
     url.textContent = 'orsbuilds.hu/projects/' + slides[k].dataset.slug;
     paintShot();
   }
-  function tick() { if (held) return; var n = slides[cur].querySelectorAll('img').length; shot = (shot + 1) % n; paintShot(); }
+  function tick() {
+    if (held) return;
+    ticks++;
+    if (ticks >= 3 && !manual) { show((cur + 1) % slides.length); return; }
+    var n = slides[cur].querySelectorAll('img').length; shot = (shot + 1) % n; paintShot();
+  }
   function start() { if (!timer && !reduce) timer = setInterval(tick, 2600); }
-  tabs.forEach(function (t, j) { t.addEventListener('click', function () { show(j); }); });
-  root.querySelector('.pshow-stage').addEventListener('mouseenter', function () { held = true; });
-  root.querySelector('.pshow-stage').addEventListener('mouseleave', function () { held = false; });
+  tabs.forEach(function (t, j) { t.addEventListener('click', function () { manual = true; show(j); }); });
+  var stage = root.querySelector('.pshow-stage');
+  stage.addEventListener('mouseenter', function () { held = true; });
+  stage.addEventListener('mouseleave', function () { held = false; });
+  stage.addEventListener('touchstart', function () { held = true; setTimeout(function () { held = false; }, 6000); }, { passive: true });
   show(0); start();
 })();
