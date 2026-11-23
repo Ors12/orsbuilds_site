@@ -994,3 +994,4 @@ html[data-theme="dark"] .guarantee { background: #0b1512; border-color: var(--ma
 .pricing .tier .service-price { font-size: clamp(1.4rem, 2vw, 1.75rem); white-space: nowrap; }
 .service-disclaimer { margin-top: clamp(18px, 2.4vw, 28px); }
 @media (max-width: 1100px) and (min-width: 961px) { .pricing .tier .service-price { font-size: 1.3rem; } }
+.pricing .tier .service-list { margin-bottom: 18px; }
