@@ -995,3 +995,26 @@ html[data-theme="dark"] .guarantee { background: #0b1512; border-color: var(--ma
 .service-disclaimer { margin-top: clamp(18px, 2.4vw, 28px); }
 @media (max-width: 1100px) and (min-width: 961px) { .pricing .tier .service-price { font-size: 1.3rem; } }
 .pricing .tier .service-list { margin-bottom: 18px; }
+
+/* Miért mi?: előnykártyák és alapjellemzők */
+.why-ico { display: grid; place-items: center; flex: none; width: 58px; height: 58px; border-radius: 50%; background: #fff; color: var(--band); box-shadow: 0 0 0 1px var(--rule); }
+.why-ico svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.why-benefits { padding-block: clamp(36px, 6vw, 72px) clamp(20px, 3vw, 36px); }
+.why-benefits h2, .why-basics h2 { margin-bottom: clamp(20px, 3vw, 30px); }
+.benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
+.benefit { display: grid; align-content: start; gap: 12px; padding: clamp(22px, 2.6vw, 32px); border-radius: 18px; background: var(--panel); border: 1px solid var(--rule); }
+.benefit h3 { margin: 6px 0 0; font-size: 1.3rem; }
+.benefit p { margin: 0; color: var(--muted); }
+.benefit-main { background: linear-gradient(135deg, var(--mark), #f7d27a); border-color: transparent; }
+.benefit-main p, .benefit-main h3 { color: #14201c; }
+.benefit-main .why-ico { background: #fff; color: #14201c; box-shadow: none; }
+.why-basics { padding-block: clamp(20px, 3vw, 36px) clamp(36px, 6vw, 72px); }
+.basic-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 18px); margin: 0; padding: 0; list-style: none; }
+.basic-grid li { display: grid; justify-items: center; gap: 12px; padding: 22px 12px 20px; border-radius: 16px; background: var(--panel); border: 1px solid var(--rule); text-align: center; font-weight: 600; }
+.benefit, .basic-grid li { text-shadow: none !important; }
+@media (max-width: 960px) { .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .basic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
+html[data-theme="dark"] .why-ico { background: #0b1512; color: var(--mark); box-shadow: 0 0 0 1px #2a3d37; }
+html[data-theme="dark"] .benefit-main { background: linear-gradient(135deg, #e0a526, #f0c869); }
+html[data-theme="dark"] .benefit-main .why-ico { background: #fff; color: #14201c; }
+.benefit, .benefit *, .basic-grid li, .basic-grid li * { text-shadow: none !important; }
