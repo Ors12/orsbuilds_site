@@ -1097,9 +1097,3 @@ html[data-theme="dark"] body::before {
 @keyframes ticker-roll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; row-gap: 10px; } .ticker-track span:nth-child(n+11) { display: none; } }
 html[data-theme="dark"] .ticker { background: #0b1512; }
-
-/* Háttér: monitoron gördülő weboldal és lebegő böngészőablakok */
-body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .9;
-  background: url("assets/bg/hatter-oldalak.svg") center / cover no-repeat; }
-html[data-theme="dark"] body::after { background-image: url("assets/bg/hatter-oldalak-sotet.svg"); opacity: .85; }
-@media (max-width: 700px) { body::after { background-position: 72% 50%; } }
