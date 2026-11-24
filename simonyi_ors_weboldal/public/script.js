@@ -302,3 +302,11 @@ document.querySelectorAll('.flip').forEach(function (b) {
     b.setAttribute('aria-pressed', String(on));
   });
 });
+
+/* Futó szalagcím: a szavakat megkettőzi, hogy végtelenül gördüljön */
+(function () {
+  var t = document.querySelector('[data-ticker] .ticker-track');
+  if (!t) return;
+  var items = t.innerHTML;
+  t.innerHTML = items + items;
+})();

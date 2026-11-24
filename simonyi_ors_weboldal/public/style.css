@@ -1088,3 +1088,18 @@ html[data-theme="dark"] body::before {
     #0e1714;
 }
 @media (prefers-reduced-motion: reduce) { body::before { animation: none; } }
+
+/* Futó szalagcím */
+.ticker { overflow: hidden; background: var(--band); color: var(--band-ink); border-block: 3px solid var(--mark); padding-block: 14px; }
+.ticker-track { display: flex; width: max-content; animation: ticker-roll 38s linear infinite; }
+.ticker-track span { flex: none; display: inline-flex; align-items: center; font: 700 clamp(1.05rem, 2.2vw, 1.45rem)/1 var(--serif); text-shadow: none; white-space: nowrap; }
+.ticker-track span::after { content: ""; width: 9px; height: 9px; margin-inline: clamp(18px, 3vw, 34px); background: var(--mark); transform: rotate(45deg); }
+@keyframes ticker-roll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; row-gap: 10px; } .ticker-track span:nth-child(n+11) { display: none; } }
+html[data-theme="dark"] .ticker { background: #0b1512; }
+
+/* Háttér: finoman úszó pontrács a fényfoltok fölött */
+body::after { content: ""; position: fixed; inset: -80px; z-index: -1; pointer-events: none; background-image: radial-gradient(rgba(11,107,94,.22) 1.2px, transparent 1.6px); background-size: 40px 40px; animation: dots-drift 60s linear infinite; }
+@keyframes dots-drift { to { transform: translate(40px, 40px); } }
+html[data-theme="dark"] body::after { background-image: radial-gradient(rgba(120,220,195,.16) 1.2px, transparent 1.6px); }
+@media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
