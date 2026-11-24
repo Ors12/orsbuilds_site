@@ -1067,3 +1067,24 @@ html[data-theme="dark"] .person-card { background: #0b1512; }
 .about-punch h2 { color: #fff; text-shadow: none; }
 .about-punch p { color: var(--band-ink); text-shadow: none; }
 .skills-section:has(.about-punch) { padding-block: clamp(36px, 6vw, 64px) 0; }
+
+/* Háttér: lassan úszó fényfoltok (a régi áramköri rács helyett) */
+body::before {
+  inset: -25%; background:
+    radial-gradient(36% 40% at 22% 28%, rgba(11,107,94,.17), transparent 70%),
+    radial-gradient(32% 38% at 78% 22%, rgba(240,180,41,.19), transparent 70%),
+    radial-gradient(40% 44% at 64% 80%, rgba(11,107,94,.13), transparent 70%),
+    radial-gradient(28% 32% at 14% 86%, rgba(240,180,41,.13), transparent 70%),
+    var(--ground);
+  animation: aurora 38s ease-in-out infinite alternate; will-change: transform;
+}
+@keyframes aurora { from { transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1); } to { transform: translate3d(3%, 3%, 0) rotate(6deg) scale(1.08); } }
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(36% 40% at 22% 28%, rgba(34,170,146,.16), transparent 70%),
+    radial-gradient(32% 38% at 78% 22%, rgba(240,180,41,.09), transparent 70%),
+    radial-gradient(40% 44% at 64% 80%, rgba(34,170,146,.11), transparent 70%),
+    radial-gradient(28% 32% at 14% 86%, rgba(240,180,41,.06), transparent 70%),
+    #0e1714;
+}
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; } }
