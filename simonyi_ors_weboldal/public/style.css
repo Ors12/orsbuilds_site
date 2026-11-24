@@ -1075,7 +1075,7 @@ body::before {
     radial-gradient(32% 38% at 78% 22%, rgba(240,180,41,.19), transparent 70%),
     radial-gradient(40% 44% at 64% 80%, rgba(11,107,94,.13), transparent 70%),
     radial-gradient(28% 32% at 14% 86%, rgba(240,180,41,.13), transparent 70%),
-    var(--ground);
+    #d9e3dd;
   animation: aurora 24s ease-in-out infinite alternate; will-change: transform;
 }
 @keyframes aurora { from { transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1); } to { transform: translate3d(3%, 3%, 0) rotate(6deg) scale(1.08); } }
@@ -1099,7 +1099,7 @@ html[data-theme="dark"] body::before {
 html[data-theme="dark"] .ticker { background: #0b1512; }
 
 /* Háttér: monitoron gördülő weboldal és lebegő böngészőablakok */
-body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .55;
+body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .9;
   background: url("assets/bg/hatter-oldalak.svg") center / cover no-repeat; }
-html[data-theme="dark"] body::after { background-image: url("assets/bg/hatter-oldalak-sotet.svg"); opacity: .7; }
+html[data-theme="dark"] body::after { background-image: url("assets/bg/hatter-oldalak-sotet.svg"); opacity: .85; }
 @media (max-width: 700px) { body::after { background-position: 72% 50%; } }
