@@ -1098,17 +1098,8 @@ html[data-theme="dark"] body::before {
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; row-gap: 10px; } .ticker-track span:nth-child(n+11) { display: none; } }
 html[data-theme="dark"] .ticker { background: #0b1512; }
 
-/* Háttér: második fényfolt-réteg, az elsővel ellentétes irányban úszik (pontrács nélkül) */
-body::after { content: ""; position: fixed; inset: -30%; z-index: -1; pointer-events: none;
-  background:
-    radial-gradient(26% 30% at 70% 40%, rgba(11,107,94,.16), transparent 70%),
-    radial-gradient(22% 28% at 30% 70%, rgba(240,180,41,.17), transparent 70%),
-    radial-gradient(20% 24% at 88% 88%, rgba(11,107,94,.12), transparent 70%);
-  animation: aurora-b 26s ease-in-out infinite alternate; will-change: transform; }
-@keyframes aurora-b { from { transform: translate3d(5%, 4%, 0) rotate(0deg) scale(1.05); } to { transform: translate3d(-5%, -4%, 0) rotate(-9deg) scale(.95); } }
-html[data-theme="dark"] body::after {
-  background:
-    radial-gradient(26% 30% at 70% 40%, rgba(34,170,146,.14), transparent 70%),
-    radial-gradient(22% 28% at 30% 70%, rgba(240,180,41,.08), transparent 70%),
-    radial-gradient(20% 24% at 88% 88%, rgba(34,170,146,.1), transparent 70%); }
-@media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
+/* Háttér: monitoron gördülő weboldal és lebegő böngészőablakok */
+body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .55;
+  background: url("assets/bg/hatter-oldalak.svg") center / cover no-repeat; }
+html[data-theme="dark"] body::after { background-image: url("assets/bg/hatter-oldalak-sotet.svg"); opacity: .7; }
+@media (max-width: 700px) { body::after { background-position: 72% 50%; } }
