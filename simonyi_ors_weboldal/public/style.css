@@ -1103,3 +1103,6 @@ body::after { content: ""; position: fixed; inset: -80px; z-index: -1; pointer-e
 @keyframes dots-drift { to { transform: translate(40px, 40px); } }
 html[data-theme="dark"] body::after { background-image: radial-gradient(rgba(120,220,195,.16) 1.2px, transparent 1.6px); }
 @media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
+
+/* Jogi linkek: középen, minden oldalon */
+.legal-links { justify-content: center; text-align: center; }
