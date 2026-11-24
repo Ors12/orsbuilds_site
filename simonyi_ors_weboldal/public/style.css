@@ -1097,3 +1097,37 @@ html[data-theme="dark"] body::before {
 @keyframes ticker-roll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; row-gap: 10px; } .ticker-track span:nth-child(n+11) { display: none; } }
 html[data-theme="dark"] .ticker { background: #0b1512; }
+
+/* Háttér: sötétebb zöld → türkiz átmenet, lassan úszó mélyebb foltokkal */
+body::before {
+  background:
+    radial-gradient(34% 40% at 20% 30%, rgba(11,107,94,.34), transparent 70%),
+    radial-gradient(32% 38% at 80% 24%, rgba(0,150,150,.28), transparent 70%),
+    radial-gradient(38% 42% at 66% 82%, rgba(11,107,94,.26), transparent 70%),
+    radial-gradient(26% 30% at 12% 86%, rgba(240,180,41,.16), transparent 70%),
+    linear-gradient(135deg, #8dc2ae 0%, #86c7bb 45%, #78c1c0 100%);
+}
+main { --muted: #26332e; }
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(34% 40% at 20% 30%, rgba(24,150,128,.26), transparent 70%),
+    radial-gradient(32% 38% at 80% 24%, rgba(0,170,170,.2), transparent 70%),
+    radial-gradient(38% 42% at 66% 82%, rgba(24,150,128,.18), transparent 70%),
+    linear-gradient(135deg, #0a1f1b 0%, #0b2a26 50%, #0c3a39 100%);
+}
+html[data-theme="dark"] main { --muted: #b3c3bb; }
+
+/* Háttér: sötétebb zöld és türkiz színátmenet, lassan áthullámzik */
+body::before {
+  inset: -45%;
+  background:
+    radial-gradient(30% 30% at 75% 30%, rgba(240,180,41,.14), transparent 70%),
+    linear-gradient(115deg, #84b9a3 0%, #6fbdb5 30%, #8fc4a8 55%, #62b3ae 80%, #7dbba2 100%);
+  animation: tealflow 26s ease-in-out infinite alternate;
+}
+@keyframes tealflow { from { transform: translate3d(-4%, -3%, 0) rotate(-6deg) scale(1); } to { transform: translate3d(4%, 3%, 0) rotate(8deg) scale(1.1); } }
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(30% 30% at 75% 30%, rgba(240,180,41,.06), transparent 70%),
+    linear-gradient(115deg, #0a1f1a 0%, #0b3a38 32%, #0c2a22 58%, #0a4443 82%, #0a241e 100%);
+}
