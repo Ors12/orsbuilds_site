@@ -1327,3 +1327,6 @@ html[data-theme="dark"] .gyik-nav a { background: #0f1d19; color: #f1f7f4; }
 html[data-theme="dark"] .gyik-nav a:hover { background: var(--mark); color: #0b1613; }
 html[data-theme="dark"] .gyik-ico { color: #0b1613; }
 html[data-theme="dark"] .gyik-cta { border-color: #bfe9dc; }
+
+/* Jogi linkek: középen, minden oldalon */
+.legal-links { justify-content: center; text-align: center; }
