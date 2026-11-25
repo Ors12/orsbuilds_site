@@ -1424,15 +1424,15 @@ html[data-theme="dark"] .ab-cta .btn { background: #0b1613; color: #fff !importa
 
 /* Nyitóoldal: a pitch kártya jobbról úszik be */
 main { overflow-x: clip; }
-.hero-pitch { animation: pitch-in 1s cubic-bezier(.16, .84, .3, 1) .15s both; }
+.hero-pitch { animation: pitch-in 1s cubic-bezier(.16, .84, .3, 1) 0s both; }
 @keyframes pitch-in {
-  from { transform: translateX(70vw); opacity: 0; }
+  from { transform: translateX(40vw); opacity: 0; }
   to { transform: none; opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-pitch { animation: none; } }
 
 /* Nyitóoldal: a bal oldali szövegblokk felülről úszik be */
-main .hero > div:first-child { animation: hero-in 1s cubic-bezier(.16, .84, .3, 1) both; }
+main .hero > div:first-child { animation: hero-in 1s cubic-bezier(.16, .84, .3, 1) 0s both; }
 @keyframes hero-in {
   from { transform: translateY(-140px); opacity: 0; }
   to { transform: none; opacity: 1; }
