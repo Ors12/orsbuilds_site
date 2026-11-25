@@ -1266,3 +1266,9 @@ a.faq-ask, .faq-ask-link { display: inline-block; padding: 12px 22px !important;
   .contact-ico svg { width: 19px; height: 19px; }
   .contact-row b.contact-mail { font-size: .8rem; overflow-wrap: normal; letter-spacing: -.01em; }
 }
+
+/* Ár: mindig egy sorban (összeg + Ft), a betűméret a kártya szélességéhez igazodik */
+.pricing .tiers > article { container-type: inline-size; }
+.pricing .tier .service-price, .pricing .addon .service-price, .service-price {
+  white-space: nowrap !important; overflow-wrap: normal !important; font-size: min(1.6rem, 8.6cqw) !important;
+}
