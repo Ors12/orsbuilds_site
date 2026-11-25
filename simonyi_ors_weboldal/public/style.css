@@ -1246,3 +1246,23 @@ a.faq-ask, .faq-ask-link { display: inline-block; padding: 12px 22px !important;
 .pricing .tier .service-price, .pricing .addon .service-price, .service-price { font: 400 clamp(1.25rem, 1.8vw, 1.6rem)/1.15 var(--serif) !important; white-space: normal; overflow-wrap: anywhere; padding: 0; }
 .pricing .tier .price-button { margin-top: 6px; }
 .faq-list, .faq-layout .faq-list, .faq-list.faq-items { border-top: 0 !important; }
+
+/* Kapcsolati kártya */
+.contact-card { background: #0b1613 !important; color: #e6eee9; box-shadow: 8px 8px 0 var(--mark) !important; display: grid; gap: 14px; padding: clamp(22px, 3.5vw, 34px) !important; }
+.contact-card::after { display: none; }
+.contact-card-kicker { margin: 0 !important; color: var(--mark) !important; font-weight: 800; font-size: 1rem; }
+.contact-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #14302b; border: 3px solid #e6eee9; border-radius: 12px; color: #fff; text-decoration: none; transition: transform .12s, box-shadow .12s, background .12s; }
+.contact-row:hover, .contact-row:focus-visible { background: #1a3d37; color: #fff; transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--mark); }
+.contact-ico { flex: none; width: 46px; height: 46px; display: grid; place-items: center; background: var(--mark); color: var(--ink); border: 3px solid #0b1613; border-radius: 12px; }
+.contact-ico svg { width: 22px; height: 22px; }
+.contact-row-text { display: grid; min-width: 0; }
+.contact-row small { color: #b8cbc3; font-weight: 700; font-size: .85rem; }
+.contact-row b { color: #fff !important; font-family: var(--serif); font-weight: 400; font-size: clamp(1.15rem, 2.4vw, 1.5rem); line-height: 1.2; overflow-wrap: anywhere; text-decoration: none; }
+.contact-row b.contact-mail { font-size: clamp(.98rem, 1.9vw, 1.15rem); }
+.contact-card-note { margin: 4px 0 0 !important; padding-top: 14px !important; border-top: 2px solid rgba(230,238,233,.25) !important; color: #c9d8d1 !important; max-width: none !important; }
+@media (max-width: 480px) {
+  .contact-row { padding: 12px 12px; gap: 10px; }
+  .contact-ico { width: 38px; height: 38px; }
+  .contact-ico svg { width: 19px; height: 19px; }
+  .contact-row b.contact-mail { font-size: .8rem; overflow-wrap: normal; letter-spacing: -.01em; }
+}
