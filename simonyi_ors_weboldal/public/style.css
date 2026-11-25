@@ -1131,3 +1131,92 @@ html[data-theme="dark"] body::before {
     radial-gradient(30% 30% at 75% 30%, rgba(240,180,41,.06), transparent 70%),
     linear-gradient(115deg, #0a1f1a 0%, #0b3a38 32%, #0c2a22 58%, #0a4443 82%, #0a241e 100%);
 }
+
+
+/* ===== Bootstrap-szerű kinézet (ág: bootstrap-kinezet) ===== */
+:root {
+  --serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  --max: 1140px;
+  --bs-radius: .5rem;
+  --bs-radius-sm: .375rem;
+  --bs-shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+  --bs-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+}
+body { font: 400 1rem/1.5 var(--sans); }
+h1, h2, h3 { font-weight: 500; line-height: 1.2; letter-spacing: 0; }
+h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+h3 { font-size: 1.25rem; font-weight: 500; }
+.btn, .career-btn, button.btn { font-weight: 400; padding: .5rem 1.1rem; }
+.about-bubble,
+.about-bubble:nth-child(even),
+.about-short-bubble,
+.basic-grid li,
+.benefit,
+.booking-id-box,
+.cancel-box,
+.client-soon,
+.contact-card,
+.contact-form select,
+.contact-form textarea,
+.contact-form-wrap,
+.cs-bar,
+.cs-build,
+.cs-hero em,
+.faq-ask,
+.faq-layout .faq-item,
+.faq-layout .faq-item summary,
+.flip-face,
+.guarantee,
+.lang-menu,
+.lang-notice,
+.legal-form,
+.legal-toc,
+.pain-answer,
+.person-card,
+.person-logo,
+.pricing .service.addon,
+.pricing .service.tier,
+.process-section .steps li > div,
+.profile-card,
+.pshow-frame,
+.pshow-phone,
+.pshow-phone-screen,
+.pshow-screen,
+.pshow-stage,
+.review,
+.service,
+.skills > .skill-card,
+.strip-shot,
+.study,
+.study:nth-child(even),
+.tools-layout .skill-card:nth-child(2),
+.tools-layout .skill-card:nth-child(3),
+.tools-layout .skills > .skill-card,
+.versus-new,
+.why-faq .faq-item,
+.why-faq .faq-item summary,
+/* ---------- Süti- és adatkezelési üzenet (kicsi) ---------- */ .cookie-bar,
+/* Folyamatos tanulás */ .learning-card,
+/* Munkáim: böngészőablak-keret a képernyőképek körül */ .work-shot { border-radius: var(--bs-radius) !important; }
+.about-short-link,
+.chip span,
+.chips li,
+.cs-badge,
+.faq-ask-link,
+.lang-toggle,
+.legal-links .legal-link-btn,
+.legal-links a,
+.profile-link,
+.pshow-tab,
+.pshow-url,
+.reason-prices li,
+.service .price-button,
+.service-list li,
+.service-price,
+.tier-tag,
+.why-person-link { border-radius: var(--bs-radius-sm) !important; }
+.benefit, .pricing .service.tier, .pricing .service.addon, .profile-card, .contact-card, .guarantee, .person-card, .review, .why-faq .faq-item, .faq-layout .faq-item, .about-bubble, .skills > .skill-card, .strip-card { box-shadow: var(--bs-shadow-sm); }
+.contact-form select, .contact-form textarea, .contact-form input { border-radius: var(--bs-radius-sm) !important; }
+.person-logo { border-radius: var(--bs-radius) !important; }
