@@ -1234,3 +1234,15 @@ html[data-theme="dark"] .ticker-track span::after { background: #0b1613; }
 .guarantee :is(h2, h3, p, strong, span, li) { color: #fff !important; }
 html[data-theme="dark"] .guarantee { border-color: #bfe9dc !important; }
 .card, .booking-form.card { background: var(--nb-card); border: 3px solid var(--nb-line) !important; border-radius: var(--nb-r) !important; box-shadow: var(--nb-pop) !important; }
+
+/* Belső margók: a szöveg ne üljön a keret szélén */
+.faq-item summary, .faq-layout .faq-item summary, .why-faq .faq-item summary { padding: 20px 64px 20px 26px !important; }
+.faq-item summary::after { right: 24px !important; }
+.faq-item p, .faq-layout .faq-item p, .why-faq .faq-item p { padding: 0 26px 22px !important; margin: 0; }
+.faq-ask { padding: 24px 28px !important; }
+a.faq-ask, .faq-ask-link { display: inline-block; padding: 12px 22px !important; border: 3px solid var(--nb-line); border-radius: 12px !important; background: var(--mark); color: var(--ink); box-shadow: var(--nb-pop); text-decoration: none; font-weight: 800; }
+.faq-ask p { color: #fff; }
+.pricing .tier { padding: clamp(24px, 3vw, 34px) clamp(24px, 3vw, 32px) !important; }
+.pricing .tier .service-price, .pricing .addon .service-price, .service-price { font: 400 clamp(1.25rem, 1.8vw, 1.6rem)/1.15 var(--serif) !important; white-space: normal; overflow-wrap: anywhere; padding: 0; }
+.pricing .tier .price-button { margin-top: 6px; }
+.faq-list, .faq-layout .faq-list, .faq-list.faq-items { border-top: 0 !important; }
