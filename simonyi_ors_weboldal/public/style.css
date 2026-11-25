@@ -1379,3 +1379,45 @@ html[data-theme="dark"] .gyik-cta { border-color: #bfe9dc; }
 html[data-theme="dark"] .hello-wave { background: #fff; color: #0b1613; }
 html[data-theme="dark"] .hero-hello { color: #fff; }
 html[data-theme="dark"] .about-short-person :is(strong, span) { color: #fff; }
+
+/* Bemutatkozunk oldal: új elrendezés */
+.ab-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .8fr); gap: clamp(28px, 6vw, 72px); align-items: center; padding-block: clamp(40px, 7vw, 88px) clamp(28px, 4vw, 48px); }
+.ab-intro h1 { margin-bottom: 20px; }
+.ab-intro .lead { max-width: 50ch; font-size: 1.2rem; color: var(--ink); margin: 0 0 28px; }
+.ab-intro .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.ab-card { margin: 0; padding: 26px; background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line); border-radius: var(--nb-r); box-shadow: 8px 8px 0 var(--mark); text-align: center; }
+.ab-card img { width: min(100%, 220px); height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--nb-line); box-shadow: 5px 5px 0 var(--mark); margin-bottom: 20px; }
+.ab-card figcaption { display: grid; gap: 4px; justify-items: center; }
+.ab-card strong { font: 400 1.5rem/1.2 var(--serif); color: var(--ink); }
+.ab-card figcaption > span { color: var(--ink); opacity: .8; }
+.ab-card ul { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.ab-card li { padding: 4px 12px; background: #fff; color: var(--ink); border: 2px solid var(--nb-line); border-radius: 10px; font-weight: 700; font-size: .88rem; }
+
+.ab-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); padding-block: clamp(16px, 3vw, 32px) clamp(36px, 6vw, 72px); }
+.ab-steps article { padding: clamp(22px, 3vw, 32px); background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line); border-radius: var(--nb-r); box-shadow: var(--nb-pop); }
+.ab-num { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 16px; background: var(--mark); color: var(--ink); border: 3px solid var(--nb-line); border-radius: 12px; font: 400 1.25rem/1 var(--serif); }
+.ab-steps h2 { margin: 0 0 10px; font-size: 1.35rem; color: var(--ink); text-shadow: none; }
+.ab-steps p { margin: 0; color: var(--ink); opacity: .85; line-height: 1.55; text-shadow: none; }
+
+.ab-punch { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding: clamp(28px, 5vw, 56px); background: #0b1613; color: #fff; border: 3px solid var(--nb-line); border-radius: var(--nb-r); box-shadow: 8px 8px 0 var(--mark); }
+.ab-punch h2 { margin: 0 0 12px; color: #fff; text-shadow: none; }
+.ab-punch p { margin: 0; color: rgba(230,238,233,.88); font-size: 1.1rem; text-shadow: none; }
+.ab-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.ab-facts li { padding: 14px 16px; border: 2px solid rgba(255,255,255,.25); border-left: 5px solid var(--mark); border-radius: 10px; display: grid; gap: 2px; }
+.ab-facts strong { font: 400 1.25rem/1.2 var(--serif); color: #fff; }
+.ab-facts span { font-size: .9rem; color: rgba(230,238,233,.8); }
+
+.ab-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-block: clamp(36px, 6vw, 72px); padding: clamp(26px, 4vw, 44px); background: var(--mark); color: var(--ink); border: 3px solid var(--nb-line); border-radius: var(--nb-r); box-shadow: 8px 8px 0 var(--nb-line); }
+.ab-cta h2 { margin: 0 0 8px; color: var(--ink); text-shadow: none; }
+.ab-cta p { margin: 0; color: var(--ink); text-shadow: none; }
+.ab-cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.ab-cta .btn { background: var(--ink); color: #fff !important; }
+.ab-cta-link { color: var(--ink); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 820px) {
+  .ab-hero, .ab-punch { grid-template-columns: 1fr; }
+  .ab-steps { grid-template-columns: 1fr; }
+  .ab-card { max-width: 380px; }
+}
+@media (max-width: 480px) { .ab-facts { grid-template-columns: 1fr; } }
+html[data-theme="dark"] .ab-intro .lead { color: #e6eee9; }
+html[data-theme="dark"] .ab-cta .btn { background: #0b1613; color: #fff !important; border-color: #0b1613; }
