@@ -1292,3 +1292,38 @@ html[data-theme="dark"] .first-card .btn { background: #0b1613 !important; color
 html[data-theme="dark"] .first-card .btn.secondary { background: #fff !important; color: #0b1613 !important; }
 html[data-theme="dark"] .first-card { border-color: #bfe9dc; box-shadow: 8px 8px 0 #bfe9dc; }
 .first-card .first-tag { color: #fff !important; background: #0b1613; }
+
+/* ===== GYIK oldal ===== */
+.gyik-hero { padding-block: clamp(36px, 6vw, 72px) clamp(12px, 2vw, 24px); }
+.gyik-hero h1 { max-width: 20ch; margin: 0 0 14px; }
+.gyik-hero > p { font-size: 1.2rem; font-weight: 600; max-width: 52ch; margin: 0 0 24px; }
+.gyik-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.gyik-nav a { padding: 9px 18px; background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line); border-radius: 12px; box-shadow: 3px 3px 0 var(--nb-line); font-weight: 800; text-decoration: none; transition: transform .12s, box-shadow .12s, background .12s; }
+.gyik-nav a:hover, .gyik-nav a:focus-visible { background: var(--mark); transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--nb-line); }
+.gyik-group { padding-block: clamp(22px, 3.5vw, 40px); display: grid; grid-template-columns: minmax(200px, 300px) minmax(0, 1fr); gap: clamp(18px, 4vw, 56px); align-items: start; scroll-margin-top: 90px; }
+.gyik-group-head { position: sticky; top: 96px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.gyik-group-head h2 { margin: 0; }
+.gyik-ico { width: 58px; height: 58px; display: grid; place-items: center; background: var(--mark); color: #0b1613; border: 3px solid var(--nb-line); border-radius: 14px; box-shadow: 4px 4px 0 var(--nb-line); }
+.gyik-group:nth-of-type(even) .gyik-ico { background: #fff; }
+.gyik-group:nth-of-type(3n) .gyik-ico { background: #7fe0c8; }
+.gyik-ico svg { width: 28px; height: 28px; }
+.gyik-list { display: grid; gap: 14px; }
+.gyik-list .faq-item { background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line) !important; border-radius: var(--nb-r) !important; box-shadow: var(--nb-pop) !important; transition: background .15s; }
+.gyik-list .faq-item[open] { background: #fff3c4; }
+.gyik-list .faq-item summary { font-weight: 800; font-size: 1.08rem; cursor: pointer; border-radius: var(--nb-r) !important; }
+.gyik-list .faq-item p { color: var(--ink) !important; font-weight: 500; max-width: 62ch; }
+.gyik-cta-wrap { padding-block: clamp(28px, 5vw, 64px) clamp(44px, 7vw, 90px); }
+.gyik-cta { background: #0b1613; color: #fff; border: 3px solid #0b1613; border-radius: var(--nb-r); box-shadow: 8px 8px 0 var(--mark); padding: clamp(26px, 4vw, 48px); }
+.gyik-cta h2 { color: var(--mark); margin: 0 0 10px; }
+.gyik-cta p { color: #e6eee9 !important; font-size: 1.1rem; max-width: 52ch; margin: 0 0 20px; }
+.gyik-cta .btn.secondary { background: #fff; }
+.gyik-teaser { padding-block: clamp(24px, 4vw, 48px); }
+.gyik-teaser-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line); border-radius: var(--nb-r); box-shadow: var(--nb-pop-lg); padding: clamp(22px, 3.5vw, 36px); }
+.gyik-teaser-box h2 { margin: 0 0 6px; font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem); }
+.gyik-teaser-box p { margin: 0; color: var(--ink); max-width: 46ch; }
+@media (max-width: 800px) { .gyik-group { grid-template-columns: 1fr; } .gyik-group-head { position: static; flex-direction: row; align-items: center; } .gyik-ico { width: 48px; height: 48px; } }
+html[data-theme="dark"] .gyik-list .faq-item[open] { background: #2a2410; }
+html[data-theme="dark"] .gyik-nav a { background: #0f1d19; color: #f1f7f4; }
+html[data-theme="dark"] .gyik-nav a:hover { background: var(--mark); color: #0b1613; }
+html[data-theme="dark"] .gyik-ico { color: #0b1613; }
+html[data-theme="dark"] .gyik-cta { border-color: #bfe9dc; }
