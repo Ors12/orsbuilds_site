@@ -1421,3 +1421,12 @@ html[data-theme="dark"] .about-short-person :is(strong, span) { color: #fff; }
 @media (max-width: 480px) { .ab-facts { grid-template-columns: 1fr; } }
 html[data-theme="dark"] .ab-intro .lead { color: #e6eee9; }
 html[data-theme="dark"] .ab-cta .btn { background: #0b1613; color: #fff !important; border-color: #0b1613; }
+
+/* Nyitóoldal: a pitch kártya jobbról úszik be */
+main { overflow-x: clip; }
+.hero-pitch { animation: pitch-in 1s cubic-bezier(.16, .84, .3, 1) .15s both; }
+@keyframes pitch-in {
+  from { transform: translateX(70vw); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-pitch { animation: none; } }
