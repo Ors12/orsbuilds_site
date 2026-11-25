@@ -1272,3 +1272,23 @@ a.faq-ask, .faq-ask-link { display: inline-block; padding: 12px 22px !important;
 .pricing .tier .service-price, .pricing .addon .service-price, .service-price {
   white-space: nowrap !important; overflow-wrap: normal !important; font-size: min(1.6rem, 8.6cqw) !important;
 }
+
+/* Első megrendelők ajánlat */
+.why-first { padding-block: clamp(24px, 4vw, 48px); }
+.first-card { background: var(--mark); color: #0b1613; border: 3px solid #0b1613; border-radius: var(--nb-r); box-shadow: 8px 8px 0 #0b1613; padding: clamp(24px, 4vw, 44px); }
+.first-card h2 { color: #0b1613; margin: 10px 0 12px; max-width: 20ch; }
+.first-card p, .first-card li { color: #0b1613 !important; }
+.first-tag { display: inline-block; margin: 0; padding: 4px 12px; background: #0b1613; color: #fff !important; border-radius: 8px; font-weight: 800; font-size: .92rem; }
+.first-lead { margin: 0 0 16px; max-width: 60ch; font-size: 1.1rem; font-weight: 600; }
+.first-list { margin: 0 0 22px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.first-list li { position: relative; padding-left: 30px; font-weight: 700; }
+.first-list li::before { content: ""; position: absolute; left: 0; top: .3em; width: 18px; height: 18px; border-radius: 50%; background: #0b1613; }
+.first-list li::after { content: ""; position: absolute; left: 6px; top: calc(.3em + 3px); width: 5px; height: 9px; border: solid var(--mark); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+.first-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.first-card .btn { background: #0b1613; color: #fff !important; border-color: #0b1613; box-shadow: 5px 5px 0 #fff; }
+.first-card .btn:hover { background: #14302b; box-shadow: 7px 7px 0 #fff; }
+.first-card .btn.secondary { background: #fff; color: #0b1613 !important; box-shadow: 5px 5px 0 #0b1613; }
+html[data-theme="dark"] .first-card .btn { background: #0b1613 !important; color: #fff !important; }
+html[data-theme="dark"] .first-card .btn.secondary { background: #fff !important; color: #0b1613 !important; }
+html[data-theme="dark"] .first-card { border-color: #bfe9dc; box-shadow: 8px 8px 0 #bfe9dc; }
+.first-card .first-tag { color: #fff !important; background: #0b1613; }
