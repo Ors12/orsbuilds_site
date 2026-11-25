@@ -1132,91 +1132,105 @@ html[data-theme="dark"] body::before {
     linear-gradient(115deg, #0a1f1a 0%, #0b3a38 32%, #0c2a22 58%, #0a4443 82%, #0a241e 100%);
 }
 
+/* ===== Új arculat: vaskos, kontrasztos, "kemény árnyékos" stílus ===== */
+@font-face { font-family: "Archivo Black"; src: url("fonts/archivo-black.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/dm-sans-var.woff") format("woff"); font-weight: 100 1000; font-style: normal; font-display: swap; }
 
-/* ===== Bootstrap-szerű kinézet (ág: bootstrap-kinezet) ===== */
 :root {
-  --serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
-  --max: 1140px;
-  --bs-radius: .5rem;
-  --bs-radius-sm: .375rem;
-  --bs-shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
-  --bs-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+  --serif: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ink: #0b1613;
+  --muted: #2f423b;
+  --brand: #0a6b5c;
+  --brand-dark: #064d42;
+  --mark: #ffc83d;
+  --nb-line: #0b1613;
+  --nb-card: #fffdf5;
+  --nb-pop: 5px 5px 0 var(--nb-line);
+  --nb-pop-lg: 8px 8px 0 var(--nb-line);
+  --nb-r: 14px;
+  --max: 1120px;
 }
-body { font: 400 1rem/1.5 var(--sans); }
-h1, h2, h3 { font-weight: 500; line-height: 1.2; letter-spacing: 0; }
-h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); font-weight: 700; }
-h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
-h3 { font-size: 1.25rem; font-weight: 500; }
-.btn, .career-btn, button.btn { font-weight: 400; padding: .5rem 1.1rem; }
-.about-bubble,
-.about-bubble:nth-child(even),
-.about-short-bubble,
-.basic-grid li,
-.benefit,
-.booking-id-box,
-.cancel-box,
-.client-soon,
-.contact-card,
-.contact-form select,
-.contact-form textarea,
-.contact-form-wrap,
-.cs-bar,
-.cs-build,
-.cs-hero em,
-.faq-ask,
-.faq-layout .faq-item,
-.faq-layout .faq-item summary,
-.flip-face,
-.guarantee,
-.lang-menu,
-.lang-notice,
-.legal-form,
-.legal-toc,
-.pain-answer,
-.person-card,
-.person-logo,
-.pricing .service.addon,
-.pricing .service.tier,
-.process-section .steps li > div,
-.profile-card,
-.pshow-frame,
-.pshow-phone,
-.pshow-phone-screen,
-.pshow-screen,
-.pshow-stage,
-.review,
-.service,
-.skills > .skill-card,
-.strip-shot,
-.study,
-.study:nth-child(even),
-.tools-layout .skill-card:nth-child(2),
-.tools-layout .skill-card:nth-child(3),
-.tools-layout .skills > .skill-card,
-.versus-new,
-.why-faq .faq-item,
-.why-faq .faq-item summary,
-/* ---------- Süti- és adatkezelési üzenet (kicsi) ---------- */ .cookie-bar,
-/* Folyamatos tanulás */ .learning-card,
-/* Munkáim: böngészőablak-keret a képernyőképek körül */ .work-shot { border-radius: var(--bs-radius) !important; }
-.about-short-link,
-.chip span,
-.chips li,
-.cs-badge,
-.faq-ask-link,
-.lang-toggle,
-.legal-links .legal-link-btn,
-.legal-links a,
-.profile-link,
-.pshow-tab,
-.pshow-url,
-.reason-prices li,
-.service .price-button,
-.service-list li,
-.service-price,
-.tier-tag,
-.why-person-link { border-radius: var(--bs-radius-sm) !important; }
-.benefit, .pricing .service.tier, .pricing .service.addon, .profile-card, .contact-card, .guarantee, .person-card, .review, .why-faq .faq-item, .faq-layout .faq-item, .about-bubble, .skills > .skill-card, .strip-card { box-shadow: var(--bs-shadow-sm); }
-.contact-form select, .contact-form textarea, .contact-form input { border-radius: var(--bs-radius-sm) !important; }
-.person-logo { border-radius: var(--bs-radius) !important; }
+body { font: 500 1.0625rem/1.6 var(--sans); }
+main, main * { text-shadow: none !important; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; line-height: 1.04; }
+h1 { font-size: clamp(2.3rem, 1rem + 5vw, 4.4rem); max-width: 17ch; }
+h2 { font-size: clamp(1.7rem, 1.1rem + 2vw, 2.7rem); }
+h3 { font-size: 1.3rem; letter-spacing: -.01em; }
+strong { font-weight: 800; }
+a { text-decoration-color: var(--mark); text-decoration-thickness: 3px; text-underline-offset: 4px; color: var(--ink); font-weight: 700; }
+a:hover { background: var(--mark); color: var(--ink); }
+::selection { background: var(--mark); color: var(--ink); }
+
+/* Fejléc */
+.site-header, header.site-header, body > header { border-bottom: 4px solid var(--mark); }
+
+/* Gombok */
+.btn, .career-btn, button.btn, .pitch-cta, .service .price-button {
+  font-family: var(--sans); font-weight: 800; font-size: 1rem; letter-spacing: 0;
+  background: var(--mark); color: var(--ink) !important; border: 3px solid var(--nb-line); border-radius: 12px !important;
+  box-shadow: var(--nb-pop); padding: .7rem 1.3rem; text-decoration: none; transition: transform .12s, box-shadow .12s, background .12s;
+}
+.btn:hover, .career-btn:hover, button.btn:hover, .pitch-cta:hover, .service .price-button:hover { background: #ffd666; color: var(--ink); transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--nb-line); }
+.btn:active, .career-btn:active, button.btn:active, .pitch-cta:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--nb-line); }
+.btn.secondary, .career-btn.secondary { background: #fff; color: var(--ink) !important; }
+.btn.secondary:hover, .career-btn.secondary:hover { background: #f0fbf7; }
+
+/* Kártyák */
+.service, .pricing .service.tier, .pricing .service.addon, .benefit, .about-bubble, .about-short-bubble, .contact-card, .contact-form-wrap,
+.faq-layout .faq-item, .why-faq .faq-item, .review, .guarantee, .legal-toc, .profile-card, .study, .cancel-box, .booking-id-box, .pain-answer,
+.skills > .skill-card, .process-section .steps li > div, .legal-form, .faq-ask, .lang-notice, .versus-new, .client-soon {
+  background: var(--nb-card); color: var(--ink); border: 3px solid var(--nb-line) !important; border-radius: var(--nb-r) !important; box-shadow: var(--nb-pop) !important;
+}
+.faq-layout .faq-item summary, .why-faq .faq-item summary { border-radius: var(--nb-r) !important; }
+.review { border-style: solid; background: #fff3c4; }
+.benefit-main, .tier-main, .pricing .service.tier-main { background: var(--brand) !important; color: #fff; box-shadow: var(--nb-pop-lg) !important; }
+.benefit-main *, .tier-main :is(h2, h3, p, li, span, strong) { color: #fff !important; }
+.pricing .service.tier-main .btn, .tier-main .price-button { color: var(--ink) !important; }
+.tier-tag { background: var(--mark); color: var(--ink); border: 3px solid var(--nb-line); border-radius: 10px !important; font-weight: 800; }
+.chips li, .chip span, .pshow-tab, .cs-badge { border: 2px solid var(--nb-line); border-radius: 10px !important; font-weight: 700; background: #fff; color: var(--ink); }
+.pshow-tab[aria-selected="true"], .pshow-tab.is-active { background: var(--mark); box-shadow: 3px 3px 0 var(--nb-line); }
+
+/* Sötét panelek: borostyán árnyék */
+.hero-pitch, .person-card, .facts, .why-cta, .cta-band, .strip-section .strip-track article { border: 3px solid var(--nb-line); }
+.hero-pitch, .person-card { border-radius: var(--nb-r) !important; box-shadow: 8px 8px 0 var(--mark); background: #0b1613; }
+.person-logo { border-radius: 12px !important; }
+
+/* Szalagcím: borostyán sáv */
+.ticker { background: var(--mark); color: var(--ink); border-block: 4px solid var(--nb-line); }
+.ticker-track span { color: var(--ink); }
+.ticker-track span::after { background: var(--ink); border-radius: 0; }
+
+/* Flip kártyák */
+.flip-face { border: 3px solid var(--nb-line); border-radius: var(--nb-r) !important; box-shadow: var(--nb-pop); }
+.flip-front { background: var(--nb-card); }
+.flip-back { background: var(--mark) !important; color: var(--ink) !important; }
+.flip-back * { color: var(--ink) !important; }
+
+/* Űrlapok */
+input, select, textarea { border: 3px solid var(--nb-line) !important; border-radius: 10px !important; background: #fff; font-weight: 500; }
+input:focus, select:focus, textarea:focus { outline: 0; box-shadow: 4px 4px 0 var(--mark); }
+
+/* Sötét mód */
+html[data-theme="dark"] { --nb-line: #bfe9dc; --nb-card: #0f1d19; --ink: #f1f7f4; --muted: #b8cbc3; --brand: #1b9b86; }
+html[data-theme="dark"] body { color: #f1f7f4; }
+html[data-theme="dark"] a { color: #f1f7f4; }
+html[data-theme="dark"] .review { background: #2a2410; }
+html[data-theme="dark"] .btn, html[data-theme="dark"] .pitch-cta { color: #0b1613 !important; border-color: #0b1613; box-shadow: 5px 5px 0 #bfe9dc; }
+html[data-theme="dark"] .btn.secondary { background: #0f1d19; color: #f1f7f4 !important; border-color: #bfe9dc; }
+html[data-theme="dark"] .ticker { border-color: #0b1613; }
+html[data-theme="dark"] input, html[data-theme="dark"] select, html[data-theme="dark"] textarea { background: #0b1613; color: #f1f7f4; }
+html[data-theme="dark"] .flip-back, html[data-theme="dark"] .flip-back * { color: #0b1613 !important; }
+h1, h2, h3, .ticker-track span, .tier-tag { font-synthesis: none; }
+h1, h2, h3 { font-weight: 400 !important; }
+h1 { font-size: clamp(2.2rem, 1rem + 4vw, 3.7rem); }
+html[data-theme="dark"] .btn, html[data-theme="dark"] .career-btn, html[data-theme="dark"] button.btn, html[data-theme="dark"] .pitch-cta { background: var(--mark) !important; }
+html[data-theme="dark"] .btn:hover, html[data-theme="dark"] .pitch-cta:hover { background: #ffd666 !important; }
+html[data-theme="dark"] .btn.secondary { background: #0f1d19 !important; }
+html[data-theme="dark"] .ticker { background: var(--mark); border-color: #0b1613; }
+html[data-theme="dark"] .ticker-track span { color: #0b1613; }
+html[data-theme="dark"] .ticker-track span::after { background: #0b1613; }
+.guarantee { background: #0b1613 !important; color: #fff; box-shadow: 8px 8px 0 var(--mark) !important; }
+.guarantee :is(h2, h3, p, strong, span, li) { color: #fff !important; }
+html[data-theme="dark"] .guarantee { border-color: #bfe9dc !important; }
+.card, .booking-form.card { background: var(--nb-card); border: 3px solid var(--nb-line) !important; border-radius: var(--nb-r) !important; box-shadow: var(--nb-pop) !important; }
