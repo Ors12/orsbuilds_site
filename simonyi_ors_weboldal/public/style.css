@@ -1438,3 +1438,21 @@ main .hero > div:first-child { animation: hero-in 1s cubic-bezier(.16, .84, .3, 
   to { transform: none; opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { main .hero > div:first-child { animation: none; } }
+
+/* Lábléc: többoszlopos oldaltérkép */
+.footer-cols { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.4fr; gap: clamp(24px, 4vw, 56px); padding-block: 44px 28px; align-items: start; }
+.footer-col h2 { margin: 0 0 18px; font: 400 1.15rem/1.2 var(--serif); color: #fff; text-shadow: none; letter-spacing: 0; }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.footer-col a { color: rgba(230,238,233,.82); text-decoration: none; }
+.footer-col a:hover, .footer-col a:focus-visible { color: var(--mark); }
+.footer-brandcol .footer-mini-brand img { height: 64px; width: auto; display: block; margin-bottom: 14px; }
+.footer-brandcol p { margin: 0; max-width: 24ch; color: rgba(230,238,233,.75); line-height: 1.5; }
+.footer-person { margin: 0 0 12px; color: #fff; font-weight: 700; }
+.footer-contact a { overflow-wrap: anywhere; }
+.footer-social { display: flex; gap: 10px; margin-top: 20px; }
+.footer-social a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(230,238,233,.45); border-radius: 50%; color: #fff; }
+.footer-social a:hover, .footer-social a:focus-visible { background: var(--mark); border-color: var(--mark); color: var(--ink); }
+.footer-social svg { width: 20px; height: 20px; }
+@media (max-width: 900px) { .footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer-brandcol { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .footer-cols { grid-template-columns: 1fr; padding-top: 32px; } }
+.footer-col a { font-weight: 400; }
