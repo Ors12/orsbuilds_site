@@ -282,17 +282,36 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
   show(0); start();
 })();
 
-/* Gördülő sáv: a kártyák megkettőzése a végtelen futáshoz */
+/* Gördülő sáv: a kártyák annyiszor ismétlődnek, hogy a sáv minden képernyőszélességen megszakítás nélkül fusson */
 (function () {
   var strip = document.querySelector('[data-strip]');
   if (!strip) return;
   var track = strip.querySelector('.strip-track');
-  Array.prototype.slice.call(track.children).forEach(function (li) {
-    var c = li.cloneNode(true);
-    c.setAttribute('aria-hidden', 'true');
-    c.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
-    track.appendChild(c);
-  });
+  var originals = Array.prototype.slice.call(track.children);
+  var SPEED = 50; // px / másodperc
+  function build() {
+    Array.prototype.slice.call(track.querySelectorAll('[data-clone]')).forEach(function (n) { n.remove(); });
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var first = originals[0].getBoundingClientRect();
+    var last = originals[originals.length - 1].getBoundingClientRect();
+    var loop = last.right - first.left + gap;
+    if (!(loop > 0)) return;
+    var sets = Math.ceil(strip.clientWidth / loop) + 1;
+    for (var i = 1; i < sets; i++) {
+      originals.forEach(function (li) {
+        var c = li.cloneNode(true);
+        c.setAttribute('aria-hidden', 'true');
+        c.setAttribute('data-clone', '');
+        c.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+        track.appendChild(c);
+      });
+    }
+    track.style.setProperty('--strip-shift', loop + 'px');
+    track.style.animationDuration = (loop / SPEED) + 's';
+  }
+  build();
+  var timer;
+  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(build, 200); });
 })();
 
 /* Forgatható kártyák: kattintásra / érintésre / Enterre is fordulnak */
