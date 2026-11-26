@@ -121,7 +121,7 @@ if (bookingDate && bookingPackage && bookingTime && bookingAvailability && booki
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const sel = 'main h1, main h2, main h3, main p, main li, main dt, main dd, main label, main .btn, main .text-link';
-  const items = [...document.querySelectorAll(sel)].filter((el) => !el.closest('.nav, .topbar, form button, .admin-panel'));
+  const items = [...document.querySelectorAll(sel)].filter((el) => !el.closest('.nav, .topbar, form button, .admin-panel, .strip-track'));
   if (!items.length) return;
   document.documentElement.classList.add('js-reveal');
   const io = new IntersectionObserver((entries) => {
