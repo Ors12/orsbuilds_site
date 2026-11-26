@@ -80,7 +80,7 @@ async function handleContact({ field, name, email, phone, ip }) {
       to: config.recipient,
       replyTo: email,
       replyToName: name,
-      subject: 'Új kapcsolatfelvétel – orsbuilds',
+      subject: 'Új kapcsolatfelvétel – ORS Digital',
       text: `Új kapcsolatfelvételi üzenet érkezett.\n\nNév: ${name}\nE-mail: ${email}\nTelefon: ${phone}\nCégnév: ${company}\nTéma: ${service}\nWeboldal: ${website}\n\nÜzenet:\n${message}\n\nAdatkezelési tájékoztató elfogadva: igen\n`,
     });
   } catch (error) {
@@ -93,7 +93,7 @@ async function handleContact({ field, name, email, phone, ip }) {
     toName: name,
     replyTo: config.recipient,
     replyToName: config.fromName,
-    subject: 'Megkaptam az üzenetedet – orsbuilds',
+    subject: 'Megkaptam az üzenetedet – ORS Digital',
     text: `Kedves ${name}!\n\nKöszönöm az üzenetedet, megkaptam. Hamarosan, általában 1–2 munkanapon belül válaszolok.\n\nTéma: ${service}\nÜzeneted:\n${message}\n\nHa közben eszedbe jut valami, válaszolj erre az e-mailre.\n\nÜdvözlettel,\nSimonyi Örs\norsbuilds`,
   }).catch((error) => console.error('orsbuilds contact confirmation email error:', error?.message));
   return redirect(config.successUrl);
@@ -143,7 +143,7 @@ async function handleBooking({ field, name, email, phone, ip }) {
       to: config.recipient,
       replyTo: email,
       replyToName: name,
-      subject: 'Új időpontfoglalás – orsbuilds',
+      subject: 'Új időpontfoglalás – ORS Digital',
       text: `Új időpontfoglalás (#${id})\n\nNév: ${name}\nE-mail: ${email}\nTelefon: ${phone}\nSzolgáltatás: ${service}\nIdőpont: ${dateLabel}, ${time} (magyar idő)\nIdőtartam: ${duration} perc\nAdatkezelési tájékoztató elfogadva: igen\n\nMegjegyzés:\n${details}\n`,
     });
   } catch (error) {
@@ -167,7 +167,7 @@ async function handleBooking({ field, name, email, phone, ip }) {
     toName: name,
     replyTo: config.recipient,
     replyToName: config.fromName,
-    subject: 'Időpontfoglalás visszaigazolása – orsbuilds',
+    subject: 'Időpontfoglalás visszaigazolása – ORS Digital',
     text: `Kedves ${name}!\n\nSikeresen rögzítettük az időpontfoglalásodat.\n\nSzolgáltatás: ${service}\nIdőpont: ${dateLabel}, ${time} (magyar idő)\nIdőtartam: ${duration} perc\nFoglalási azonosító: ${id}\n\nLemondás: a weboldalon, az időpontfoglalás alatti „Időpont lemondása” űrlapon add meg az azonosítót és ezt az e-mail-címet. Kérdés vagy módosítás esetén válaszolj erre az e-mailre.\n\nÜdvözlettel,\norsbuilds`,
   }).catch((error) => { console.error('orsbuilds booking confirmation email error:', error?.message); mailErrors.push('customer'); });
 

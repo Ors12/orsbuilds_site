@@ -55,7 +55,7 @@ export async function POST(request) {
       const mailer = createMailer();
       await sendMail(mailer, {
         to: config.recipient,
-        subject: 'Időpont lemondva – orsbuilds',
+        subject: 'Időpont lemondva – ORS Digital',
         text: `Lemondott időpont (#${booking.id})\n\nNév: ${booking.name}\nE-mail: ${booking.email}\nTelefon: ${booking.phone}\nSzolgáltatás: ${booking.service}\nIdőpont: ${when}\n`,
       }).catch((error) => console.error('orsbuilds cancel admin email error:', error?.message));
       await sendMail(mailer, {
@@ -63,7 +63,7 @@ export async function POST(request) {
         toName: booking.name,
         replyTo: config.recipient,
         replyToName: config.fromName,
-        subject: 'Időpont lemondásának visszaigazolása – orsbuilds',
+        subject: 'Időpont lemondásának visszaigazolása – ORS Digital',
         text: `Kedves ${booking.name}!\n\nAz időpontodat lemondtuk.\n\nSzolgáltatás: ${booking.service}\nIdőpont: ${when}\nFoglalási azonosító: ${booking.id}\n\nHa szeretnél új időpontot, bármikor foglalhatsz a weboldalon.\n\nÜdvözlettel,\norsbuilds`,
       }).catch((error) => console.error('orsbuilds cancel customer email error:', error?.message));
     } catch (error) {

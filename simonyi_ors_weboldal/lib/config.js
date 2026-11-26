@@ -1,7 +1,7 @@
-// orsbuilds szerveroldali beállítások. A titkos értékek környezeti változókból jönnek.
+// ORS Digital szerveroldali beállítások. A titkos értékek környezeti változókból jönnek.
 export const config = {
   recipient: 'info.orsbuilds@gmail.com',
-  fromName: 'orsbuilds weboldal',
+  fromName: 'ORS Digital weboldal',
   successUrl: '/koszonjuk.html',
   bookingSuccessUrl: '/foglalas-sikeres.html',
   booking: {
