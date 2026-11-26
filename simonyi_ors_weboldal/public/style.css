@@ -1456,3 +1456,4 @@ main .hero > div:first-child { animation: hero-in 1s cubic-bezier(.16, .84, .3, 
 @media (max-width: 900px) { .footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer-brandcol { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .footer-cols { grid-template-columns: 1fr; padding-top: 32px; } }
 .footer-col a { font-weight: 400; }
+.footer-cols + .foot, footer .foot { padding-bottom: 28px; }
