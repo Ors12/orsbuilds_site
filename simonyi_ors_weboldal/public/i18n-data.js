@@ -538,7 +538,7 @@ window.ORS_I18N = {
 "Simonyi Örs, az ORS Digital alapítója: egyedi weboldalak és webshopok vállalkozásoknak.": "Örs Simonyi, Gründer von ORS Digital: individuelle Websites und Webshops für Unternehmen.",
 "Ugrás a tartalomhoz": "Zum Inhalt springen",
 "ORS Digital – főoldal": "ORS Digital – Startseite",
-"ORS Digital modern tech logó": "ORS Digital Modern-Tech-Logo",
+"ORS Digital logó": "ORS Digital Logo",
 "Menü megnyitása": "Menü öffnen",
 "Menü ☰": "Menü ☰",
 "Kezdőlap": "Startseite",
