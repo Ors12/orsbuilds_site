@@ -1457,3 +1457,8 @@ main .hero > div:first-child { animation: hero-in 1s cubic-bezier(.16, .84, .3, 
 @media (max-width: 480px) { .footer-cols { grid-template-columns: 1fr; padding-top: 32px; } }
 .footer-col a { font-weight: 400; }
 .footer-cols + .foot, footer .foot { padding-bottom: 28px; }
+
+/* Új, kör alakú logó: nagyobb megjelenítés */
+.brand-image img { height: 58px; width: auto; display: block; }
+.footer-brandcol .footer-mini-brand img { height: 104px; }
+@media (max-width: 560px) { .brand-image img { height: 52px; } }
